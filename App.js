@@ -13,8 +13,8 @@ export default function App() {
     const tempData = question;
     tempData.map((item, ind) => {
       if (index == ind) { // selected index and question ind if ==
-        if (item.marked !== 1) {
-          item.marked = 1
+        if (item.marked !== -1) {
+          item.marked = -1
         }
         else {
           item.marked = x;  // selected x  and question item.marked 
@@ -32,7 +32,7 @@ export default function App() {
     let marks = 0;
     question.map(item => {
       console.log(item);
-      if (item.marked == 1) {
+      if (item.marked !== -1) {
         marks = marks + 5;
       }
       console.log(marks);
@@ -42,7 +42,7 @@ export default function App() {
   const reset = () => {
     const tempData = question;
     tempData.map((item, ind) => {
-      item.marked = 1;
+      item.marked = -1;
     })
     let temp = [];
     tempData.map(item => {
